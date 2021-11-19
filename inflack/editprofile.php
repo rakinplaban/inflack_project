@@ -36,7 +36,7 @@
           $rows = mysqli_fetch_assoc($result);
         ?>
         <div style="margin:10px 10px 10px 10px">        
-            <form action="update.php" class= "form-group" method="GET">
+            <form action="update.php" class= "form-group" method="POST">
                 <label>Name:</label>
                 <div style="margin: 3px 3px 3px 0px">
                     <input type="text" name = "uname" value="<?=$rows["uname"]?>" placeholder="Name" class="form-control">
@@ -50,9 +50,9 @@
                     <input type="file" name = "img" value="<?=$rows["img"]?>" placeholder="Upload Image" class="form-control-file" accept="image/">
                 </div>
                 <div style="margin: 3px 3px 3px 0px">
-                    <input type="text" name = "id" value="<?=$rows["id"]?>" class="form-control">
+                    <input type="hidden" name = "id" value="<?=$rows["id"]?>" class="form-control">
                 </div>
-                <input type="Submit" value="Submit" class="btn btn-success">
+                <input type="Submit" name="Submit" value="Submit" class="btn btn-success">
             </form>
         </div>
     </body>

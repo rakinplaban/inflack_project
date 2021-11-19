@@ -20,7 +20,7 @@
         }
        
     }
-    else if(issert($_GET["update"])){
+    else if(isset($_POST["Submit"])){
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -31,10 +31,10 @@
         if (!$conn) {
           die("Connection failed: " . mysqli_connect_error());
         }
-        $id = $_GET["id"];
-        $uname = $_GET["uname"];
-        $fname = $_GET["fname"];
-        $img = $_GET["img"];
+        $id = $_REQUEST["id"];
+        $uname = $_REQUEST["uname"];
+        $fname = $_REQUEST["fname"];
+        $img = $_REQUEST["img"];
 
         $sql = "UPDATE inflackusers
                 SET uname = '$uname', fname = '$fname', img = '$img'

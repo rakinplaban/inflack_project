@@ -23,11 +23,11 @@
             <form action="insert.php" class= "form-group" method="POST">
                 <label>Name:</label>
                 <div style="margin: 3px 3px 3px 0px">
-                    <input type="text" name = "uname" placeholder="Name" class="form-control">
+                    <input type="text" name = "uname" placeholder="Name" class="form-control" autocomplete="off">
                 </div>
                 <label>Father's Name</label>
                 <div style="margin: 3px 3px 3px 0px">
-                    <input type="text" name = "fname" placeholder="Father's name" class="form-control">
+                    <input type="text" name = "fname" placeholder="Father's name" class="form-control" autocomplete="off">
                 </div>
                 <div style="margin: 5px 3px 5px 0px">
                     <label>Profile Image</label>
