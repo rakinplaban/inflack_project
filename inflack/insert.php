@@ -20,7 +20,7 @@
     VALUES('$uname', '$fname', '$img')";
 
     if(mysqli_query($conn, $sql)){
-        echo "data inserted successfully.";
+        header("Location: ../inflack/index.php");
     }
     else{
         echo "Error in inserting data ". mysqli_error($conn);

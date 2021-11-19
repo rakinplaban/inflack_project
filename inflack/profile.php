@@ -50,7 +50,7 @@
             </tr>
             <tr>
                 <td>Action:</td>
-                <td><a href="update.php?id=<?=$_GET["id"]?>" class="btn btn-success">Edit</a></td>
+                <td><a href="editprofile.php?id=<?=$_GET["id"]?>" class="btn btn-success">Edit</a></td>
             </tr>
         </table>
        
