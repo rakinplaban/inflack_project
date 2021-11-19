@@ -18,14 +18,6 @@
             </ul>
           </div>
         </nav>
-        <table class = "table">
-              <tr>
-                <th>Serial</th>
-                <th>Name</th>
-                <th>Father's Name</th>
-                <th>Profile Picture</th>
-                <th>Action</th>
-              </tr>
         <?php
           $servername = "localhost";
           $username = "root";
@@ -37,31 +29,30 @@
           if (!$conn) {
             die("Connection failed: " . mysqli_connect_error());
           }
-    
-          $sql = "SELECT * from inflackusers";
+          $id = $_GET["id"];
+          $sql = "SELECT uname,fname,img from inflackusers Where id = $id";
           $result = mysqli_query($conn, $sql);
-          while($rows = mysqli_fetch_assoc($result)){
+          $rows = mysqli_fetch_assoc($result);
         ?>
-            <!-- <table class = "table">
-              <tr>
-                <th>Serial</th>
-                <th>Name</th>
-                <th>Father's Name</th>
-                <th>Profile Picture</th>
-                <th>Action</th>
-              </tr> -->
-            <table class="table">
-              <tr>
-                <td><a href="profile.php?id=<?=$rows['id']?>" style="text-decoration:none;"><?php echo $rows['id']; ?></a></td>
+
+        <table class="table">
+            <tr>
+                <td>Name:</td>
                 <td><?php echo $rows['uname']; ?></td>
+            </tr>
+            <tr>
+                <td>Father's Name:</td>
                 <td><?php echo $rows['fname']; ?></td>
+            </tr>
+            <tr>
+                <td>Profile Image:</td>
                 <td><?php echo '<img src="data:image;base64,'.base64_encode($rows['img']).'" alt="image currently not available!" style="width:50px; height:30px" >'; ?></td>
-                <td><a href="delete.php?id=<?=$rows['id']?>" class="btn btn-danger">Delete</a></td>
-              </tr>
-            </table>
-        <?php
-          }
-        ?>
+            </tr>
+            <tr>
+                <td>Action:</td>
+                <td><a href="update.php?id=<?=$_GET["id"]?>" class="btn btn-success">Edit</a></td>
+            </tr>
+        </table>
        
     </body>
 </html>
