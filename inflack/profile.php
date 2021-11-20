@@ -35,24 +35,19 @@
           $rows = mysqli_fetch_assoc($result);
         ?>
 
-        <table class="table">
-            <tr>
-                <td>Name:</td>
-                <td><?php echo $rows['uname']; ?></td>
-            </tr>
-            <tr>
-                <td>Father's Name:</td>
-                <td><?php echo $rows['fname']; ?></td>
-            </tr>
-            <tr>
-                <td>Profile Image:</td>
-                <td><img src="image/<?=$rows['img']?>" alt="image not available" height="50px" width="80px"></td>
-            </tr>
-            <tr>
-                <td>Action:</td>
-                <td><a href="editprofile.php?id=<?=$_GET["id"]?>" class="btn btn-success">Edit</a></td>
-            </tr>
-        </table>
-       
+          <div style="margin:30px 20px 0px 600px;">
+              <img src="image/<?=$rows['img']?>" alt="image not available" style="border-radius:50%" height="250px" width="250px"><br>
+              <div class="m-2">
+                <label>Name:  </label>
+                <label><?php echo $rows['uname']; ?></label>
+              </div>
+              <div class="m-2">
+                <label>Father's Name:  </label>
+                <label><?php echo $rows['fname']; ?></label>
+              </div>
+              <a href="editprofile.php?id=<?=$_GET["id"]?>" class="btn btn-success m-2">Edit</a>
+
+          </div>
+            
     </body>
 </html>

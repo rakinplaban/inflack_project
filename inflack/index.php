@@ -19,13 +19,16 @@
           </div>
         </nav>
         <table class = "table">
+            <thead>
               <tr>
-                <th>Serial</th>
-                <th>Name</th>
-                <th>Father's Name</th>
-                <th>Profile Picture</th>
-                <th>Action</th>
-              </tr>
+                  <th>Serial</th>
+                  <th>Name</th>
+                  <th>Father's Name</th>
+                  <th>Profile Picture</th>
+                  <th>Action</th>
+                </tr>
+            </thead>
+            <tbody> 
         <?php
           $servername = "localhost";
           $username = "root";
@@ -50,7 +53,7 @@
                 <th>Profile Picture</th>
                 <th>Action</th>
               </tr> -->
-            <table class="table">
+            
               <tr>
                 <td><a href="profile.php?id=<?=$rows['id']?>" style="text-decoration:none;"><?php echo $rows['id']; ?></a></td>
                 <td><?php echo $rows['uname']; ?></td>
@@ -58,10 +61,11 @@
                 <td><img src="image/<?=$rows['img']?>" alt="image not available" height="50px" width="80px"></td>
                 <td><a href="delete.php?id=<?=$rows['id']?>" class="btn btn-danger">Delete</a></td>
               </tr>
-            </table>
+            
         <?php
           }
         ?>
-       
+          </tbody> 
+        </table>
     </body>
 </html>
