@@ -20,7 +20,7 @@
         </nav>
         <h1>Create Profile:</h1>
         <div style="margin:10px 10px 10px 10px">        
-            <form action="insert.php" class= "form-group" method="POST">
+            <form action="insert.php" class= "form-group" method="POST" enctype="multipart/form-data">
                 <label>Name:</label>
                 <div style="margin: 3px 3px 3px 0px">
                     <input type="text" name = "uname" placeholder="Name" class="form-control" autocomplete="off">
