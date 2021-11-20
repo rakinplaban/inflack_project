@@ -34,11 +34,21 @@
         $id = $_REQUEST["id"];
         $uname = $_REQUEST["uname"];
         $fname = $_REQUEST["fname"];
-        $img = $_REQUEST["img"];
+        $image = $_FILES["img"]["name"];
+        $image_temp = $_FILES["img"]["tmp_name"];
+        if($image_temp != ""){
+            move_uploaded_file($_FILES["img"]["tmp_name"],"image/".$_FILES["img"]["name"]);
 
-        $sql = "UPDATE inflackusers
-                SET uname = '$uname', fname = '$fname', img = '$img'
-                Where id = $id";
+            $sql = "UPDATE inflackusers
+                    SET uname = '$uname', fname = '$fname', img = '$image'
+                    Where id = $id";
+        }
+        else{
+            $sql = "UPDATE inflackusers
+                    SET uname = '$uname', fname = '$fname', img = '$image'
+                    Where id = $id";
+        }
+        
         $result = mysqli_query($conn, $sql);
         if($result){
             header("Location: ../inflack/index.php");

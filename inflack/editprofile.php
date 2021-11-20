@@ -36,7 +36,7 @@
           $rows = mysqli_fetch_assoc($result);
         ?>
         <div style="margin:10px 10px 10px 10px">        
-            <form action="update.php" class= "form-group" method="POST">
+            <form action="update.php" class= "form-group" method="POST" enctype="multipart/form-data">
                 <label>Name:</label>
                 <div style="margin: 3px 3px 3px 0px">
                     <input type="text" name = "uname" value="<?=$rows["uname"]?>" placeholder="Name" class="form-control">
