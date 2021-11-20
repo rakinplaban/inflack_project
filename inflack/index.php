@@ -55,7 +55,7 @@
                 <td><a href="profile.php?id=<?=$rows['id']?>" style="text-decoration:none;"><?php echo $rows['id']; ?></a></td>
                 <td><?php echo $rows['uname']; ?></td>
                 <td><?php echo $rows['fname']; ?></td>
-                <td><?php echo '<img src="data:image;base64,'.base64_encode($rows['img']).'" alt="image currently not available!" style="width:50px; height:30px" >'; ?></td>
+                <td><img src="image/<?=$rows['img']?>" alt="image not available" height="50px" width="80px"></td>
                 <td><a href="delete.php?id=<?=$rows['id']?>" class="btn btn-danger">Delete</a></td>
               </tr>
             </table>

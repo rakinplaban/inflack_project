@@ -46,7 +46,7 @@
             </tr>
             <tr>
                 <td>Profile Image:</td>
-                <td><?php echo '<img src="data:image;base64,'.base64_encode($rows['img']).'" alt="image currently not available!" style="width:50px; height:30px" >'; ?></td>
+                <td><img src="image/<?=$rows['img']?>" alt="image not available" height="50px" width="80px"></td>
             </tr>
             <tr>
                 <td>Action:</td>
