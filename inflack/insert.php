@@ -14,15 +14,14 @@
     
     $uname = $_REQUEST["uname"];
     $fname = $_REQUEST["fname"];
-    $img = $_FILES["img"]["name"];
-
-    move_uploaded_file($_FILES["img"]["tmp_name"],"image/",$_FILES["img"]["name"]);
+    $image = $_FILES["img"]["name"];
+    move_uploaded_file($_FILES["img"]["tmp_name"],"image/".$_FILES["img"]["name"]);
+    
 
     $sql = "INSERT INTO inflackusers(uname, fname , img)
-    VALUES('$uname', '$fname', '$img')";
+    VALUES('$uname', '$fname', '$image')";
 
     if(mysqli_query($conn, $sql)){
-        // move_uploaded_file($_FILES["img"]["tmp_name"],"image/",$_FILES["img"]["name"]);
         header("Location: ../inflack/index.php");
     }
     else{
